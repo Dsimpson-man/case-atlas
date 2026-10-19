@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>案例图谱 · Design Case Atlas</title>
+<meta name="description" content="商业与设计案例的结构化拆解档案：定位、成长路径、资源门槛、能学与学不来。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brandline">
+      <span class="brandline-mark"></span>
+      <span>DESIGN CASE ATLAS</span>
+    </div>
+    <h1>案例图谱</h1>
+    <p class="lede">把「它怎么起来的」拆成可复用的结构：<br class="only-wide">定位、成长路径、资源门槛、能学与学不来。</p>
+    <div class="statrow" id="stats"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="toolbar">
+    <div class="filters" id="filters"></div>
+    <div class="search">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.8 12.8 17 17"/></svg>
+      <input id="search" type="search" placeholder="搜索品牌、行业、标签" autocomplete="off">
+    </div>
+  </section>
+
+  <section id="grid" class="grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>没有匹配的案例。清空筛选看看。</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>怎么加新案例</strong>：在 <code>data/cases.json</code> 的 <code>cases</code> 数组里追加一段即可，字段说明见 README。页面无需构建。</p>
+    <p class="muted">Design Case Atlas · 持续收录中</p>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" hidden>
+  <article class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"></article>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

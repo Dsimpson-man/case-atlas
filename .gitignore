@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 本地预览 / 截图
+_preview*.png
+_screenshot*.png
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
