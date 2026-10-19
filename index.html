@@ -6,11 +6,21 @@
 <title>案例图谱 · Design Case Atlas</title>
 <meta name="description" content="商业与设计案例的结构化拆解档案：定位、成长路径、资源门槛、能学与学不来。">
 <link rel="stylesheet" href="assets/style.css">
+<script>
+  // 尽早应用主题，避免闪烁
+  try {
+    var t = localStorage.getItem("atlas-theme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
 </head>
 <body>
 
+<div class="progress" id="progress"></div>
+
 <header class="masthead">
   <div class="wrap">
+    <button class="theme-toggle" id="themeBtn" type="button" aria-label="切换深浅色"></button>
     <div class="brandline">
       <span class="brandline-mark"></span>
       <span>DESIGN CASE ATLAS</span>
@@ -24,9 +34,12 @@
 <main class="wrap">
   <section class="toolbar">
     <div class="filters" id="filters"></div>
-    <div class="search">
-      <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.8 12.8 17 17"/></svg>
-      <input id="search" type="search" placeholder="搜索品牌、行业、标签" autocomplete="off">
+    <div class="toolbar-right">
+      <div class="search">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.8 12.8 17 17"/></svg>
+        <input id="search" type="search" placeholder="搜索品牌、行业、标签" autocomplete="off">
+      </div>
+      <button class="chip" id="compareBtn" type="button">对比</button>
     </div>
   </section>
 
@@ -44,6 +57,8 @@
 <div class="overlay" id="overlay" hidden>
   <article class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"></article>
 </div>
+
+<div class="compare-bar" id="compareBar" hidden></div>
 
 <script src="assets/app.js"></script>
 </body>
