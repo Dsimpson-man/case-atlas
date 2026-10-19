@@ -1,5 +1,5 @@
 /* ============================================================
-   Design Case Atlas
+   Case Library
    数据驱动：所有内容来自 data/cases.json
    ============================================================ */
 
@@ -153,6 +153,7 @@ function renderGrid() {
       <div class="card-top">
         <span>${esc(c.industry)}</span>
         ${c.type ? `<span class="card-type">${esc(c.type)}</span>` : ""}
+        ${c.added ? `<span class="card-added">${esc(c.added)} 收录</span>` : ""}
       </div>
       <h3 class="card-title">${esc(c.name)}</h3>
       <p class="card-oneliner">${esc(c.oneLiner)}</p>
@@ -232,6 +233,7 @@ function openCase(id) {
           ${c.location ? `<span>${esc(c.location)}</span>` : ""}
           ${c.founded ? `<span>${esc(c.founded)}创立</span>` : ""}
           ${c.type ? `<span>${esc(c.type)}</span>` : ""}
+          ${c.added ? `<span>收录于 ${esc(c.added)}</span>` : ""}
         </div>
         <h2 id="sheet-title">${esc(c.name)}</h2>
         <p class="oneliner">${esc(c.oneLiner)}</p>

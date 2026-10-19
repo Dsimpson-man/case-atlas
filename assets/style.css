@@ -1,5 +1,5 @@
 /* ============================================================
-   Design Case Atlas — editorial layout, no build step
+   Case Library — editorial layout, no build step
    ============================================================ */
 
 :root {
@@ -282,11 +282,20 @@ h1 {
 .card-top {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 11px;
   letter-spacing: .14em;
   color: var(--ink-3);
   text-transform: uppercase;
+}
+
+/* 行业名允许收缩，标签不换行 */
+.card-top > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .card-type {
@@ -295,6 +304,8 @@ h1 {
   padding: 1px 6px;
   font-size: 10px;
   letter-spacing: .08em;
+  white-space: nowrap;
+  flex: none;
 }
 
 .card-title {
@@ -336,14 +347,33 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   margin-top: 18px;
   font-size: 12px;
   letter-spacing: .06em;
   color: var(--ink-3);
 }
 
+/* 左侧地点+年份：允许收缩省略，不挤占右侧 */
+.card-foot > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card-foot .arrow { transition: transform .2s ease; }
 .card:hover .card-foot .arrow { transform: translateX(4px); color: var(--accent); }
+
+/* 收藏日期：放在顶部类型标签之后，极弱化 */
+.card-top .card-added {
+  color: var(--ink-3);
+  opacity: .5;
+  font-size: 10px;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  flex: none;
+}
 
 .empty { color: var(--ink-3); padding: 40px 0 80px; font-size: 14px; }
 
